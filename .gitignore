@@ -10,5 +10,3 @@ logs/
 *.zip
 .DS_Store
 .pytest_cache/
-models/*.pkl
-!models/ner_crf_model.pkl
