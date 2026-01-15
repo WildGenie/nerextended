@@ -1,0 +1,42 @@
+{
+    "cross_validation": {
+        "fold_scores": [
+            0.8503848961888064,
+            0.8370019958002956,
+            0.8579578229939321,
+            0.842119262510401,
+            0.8502313420938267
+        ],
+        "average_f1": 0.8475390639174524
+    },
+    "crf_model": {
+        "test_f1_score": 0.7354871108192184,
+        "classification_report": "              precision    recall  f1-score   support\n\n       B-ORG       0.77      0.50      0.61        34\n       I-ORG       0.97      0.41      0.58        68\n       B-PER       0.83      0.87      0.85        46\n       I-PER       1.00      0.73      0.85        64\n       B-LOC       0.78      0.78      0.78        54\n       I-LOC       0.72      0.78      0.75        27\n     B-GROUP       0.00      0.00      0.00         0\n     I-GROUP       0.00      0.00      0.00         0\n     B-MOVIE       0.00      0.00      0.00         0\n     I-MOVIE       0.00      0.00      0.00         0\n   I-COMPANY       0.00      0.00      0.00         0\n   B-COMPANY       0.00      0.00      0.00         0\n\n   micro avg       0.74      0.67      0.70       293\n   macro avg       0.42      0.34      0.37       293\nweighted avg       0.87      0.67      0.74       293\n"
+    },
+    "extended_model": {},
+    "hmm_model": {
+        "weighted_f1_score": 0.35485950170490715,
+        "crf_comparison_f1": 0.7354871108192184,
+        "note": "HMM baseline compared on same test set as CRF"
+    },
+    "demo_prediction": {
+        "sentence": "Barış Manço Sarı Zeybek’i Ankara’da söyledi.",
+        "crf_tags": [
+            "B-PER",
+            "I-PER",
+            "O",
+            "O",
+            "B-LOC",
+            "O"
+        ],
+        "hmm_tags": [
+            "B-ORG",
+            "O",
+            "O",
+            "O",
+            "O",
+            "O"
+        ],
+        "formatted_output": "Barış [B-PER] Manço [I-PER] Sarı [O] Zeybek’i [O] Ankara’da [B-LOC] söyledi. [O]"
+    }
+}

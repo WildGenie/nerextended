@@ -1,0 +1,14 @@
+venv/
+__pycache__/
+*.pyc
+.env
+results/experiments/
+results/benchmarks/
+results/optimization/
+*.log
+logs/
+*.zip
+.DS_Store
+.pytest_cache/
+models/*.pkl
+!models/ner_crf_model.pkl

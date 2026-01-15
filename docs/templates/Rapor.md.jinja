@@ -1,0 +1,140 @@
+# Türkçe Genişletilmiş Varlık İsim Tanıma (Extended NER) Projesi
+
+## Proje Özeti
+
+Bu proje, Türkçe metinler için genişletilmiş Varlık İsim Tanıma (Named Entity Recognition - NER) sistemi geliştirmeyi amaçlamaktadır. Geleneksel NER sistemlerinin tanıdığı 3 temel kategori (Kişi, Konum, Kurum) yerine, 6 farklı varlık kategorisi tanınmaktadır:
+
+| Kategori | Etiket | Açıklama | Örnek |
+|----------|--------|----------|-------|
+| Kişi | PER | Gerçek kişi isimleri | Barış Manço, Tarkan |
+| Konum | LOC | Şehir, ülke, bölge | İstanbul, Ankara |
+| Kurum | ORG | Resmi kurumlar, STK | TBMM, Kızılay |
+| Şirket | COMPANY | Ticari şirketler | Koç Holding, Arçelik |
+| Topluluk | GROUP | Müzik grupları, kulüpler | Fenerbahçe, MFÖ |
+| Eser | MOVIE | Film, şarkı, kitap | Hababam Sınıfı |
+
+## 1. Kullanılan Yöntemler
+
+### 1.1 Makine Öğrenmesi Modelleri
+
+#### CRF (Conditional Random Fields)
+- **Tercih Sebebi**: Sekans etiketleme problemleri için en uygun klasik yöntem
+- **Kütüphane**: `sklearn-crfsuite`
+- **Avantajları**: Bağlamsal özellikleri kullanabilme, etiket geçiş olasılıklarını modelleme
+
+#### HMM (Hidden Markov Model) - Baseline
+- **Kullanım**: Karşılaştırma için temel model
+- **Implementasyon**: Elle yazılmış Viterbi algoritması
+
+### 1.2 Özellik Çıkarımı (Feature Extraction)
+
+1. **Morfolojik Analiz**: Zemberek NLP kullanılarak kök ve POS etiketleri
+2. **Gazetteer Eşleştirme**: 27,500+ kayıtlık sözlük tabanlı eşleştirme
+3. **N-gram Pencere**: Bigram ve trigram düzeyinde çok kelimeli varlık tespiti
+4. **Regex Kalıpları**: Türkçeye özgü son ekler (Derneği, Holding, vb.)
+
+### 1.3 Veri Zenginleştirme
+
+- **WikiANN**: Hugging Face'den Türkçe NER veri seti
+- **WikiNER**: turkish-nlp-suite/turkish-wikiNER
+- **Sentetik Veri**: Şablon tabanlı 5,000 cümle üretimi
+- **LLM Etiketleme**: Gemini API ile belirsiz etiketlerin düzeltilmesi
+
+---
+
+## 2. Veri Seti İstatistikleri
+
+### 2.1 Toplam Veri Dağılımı
+
+{{ total_data_distribution_table }}
+
+### 2.2 Token Dağılımı
+
+{{ token_distribution_table }}
+
+### 2.3 Gazetteer Boyutları
+
+{{ gazetteer_table }}
+
+---
+
+## 3. Deneysel Sonuçlar
+
+### 3.0 5-Katlı Çapraz Doğrulama (Cross-Validation)
+
+{{ cv_results_table }}
+
+### 3.1 Veri Seti Ablasyonu (Gold Test Seti Üzerinde)
+
+
+Bu çalışmada modellerin genelleştirme yeteneğini ölçmek için 1875 cümlelik **Gold Test Seti** kullanılmıştır.
+
+{{ dataset_ablation_table }}
+
+### 3.2 Özellik Ablasyonu
+
+{{ feature_ablation_table }}
+
+### 3.3 Diğer Modellerle Karşılaştırma (Benchmark)
+
+Bu bölümde, projemizin başarımı "savasy/bert-base-turkish-ner-cased" gibi popüler Transformer tabanlı modellerle (Gold test seti üzerinde) karşılaştırılmıştır.
+
+{{ benchmark_table }}
+
+> **Not:** Tüm deney sonuçları, çapraz doğrulama skorları ve model çıktıları proje klasöründeki **`results.json`** dosyasında detaylı bir şekilde sunulmuştur.
+
+---
+
+## 4. Örnek Sonuçlar
+
+### Demo Cümleleri
+
+| Cümle | Sonuç |
+|-------|-------|
+| Tarkan İstanbul'da konser verdi. | **Tarkan**[B-PER] **İstanbul**[B-LOC] |
+| Koç Holding yeni yatırım açıkladı. | **Koç Holding**[B-COMPANY/I-COMPANY] |
+| Hababam Sınıfı filmi vizyonda. | **Hababam Sınıfı**[B-MOVIE/I-MOVIE] |
+| Fenerbahçe Galatasaray'ı yendi. | **Fenerbahçe**[B-GROUP] **Galatasaray**[I-GROUP] |
+| Kızılay Derneği yardım dağıttı. | **Kızılay Derneği**[B-ORG/I-ORG] |
+
+---
+
+## 5. Benzer Çalışmalar
+
+| Çalışma | Yöntem | Dil | F1-Score |
+|---------|--------|-----|----------|
+| WikiANN (Pan et al., 2017) | BiLSTM-CRF | Çok dilli | ~0.85 |
+| TurkishNER (Şeker & Eryiğit, 2012) | CRF | Türkçe | 0.91 |
+| BERT-Turkish-NER (Savaş Yıldırım) | Transformer | Türkçe | 0.925 |
+| **Bu Proje** | **CRF + Gazetteer** | **Türkçe** | **{{ "%.2f"|format(best_f1) }}** (Gold Test) |
+
+### Fark ve Katkılar:
+1. Deep learning kullanılmadan klasik yöntemlerle rekabetçi sonuçlar
+2. 6 genişletilmiş kategori (standart 3 yerine)
+3. Türkçe morfolojik analiz entegrasyonu (Zemberek)
+4. 27,500+ kayıtlık kapsamlı gazetteer
+
+---
+
+## 6. Sonuç ve Gelecek Çalışmalar
+
+### Başarılar:
+- ✅ **%{{ "%.2f"|format(best_f1 * 100) }}** F1-Score (Gold Test Seti)
+- ✅ 6 farklı varlık kategorisi tanıma
+- ✅ Türkçeye özgü morfolojik özellikler
+- ✅ Kapsamlı gazetteer desteği
+
+### Gelecek İyileştirmeler:
+- [ ] Transformer tabanlı model entegrasyonu
+- [ ] Daha fazla eğitim verisi toplama
+- [ ] Gerçek zamanlı API servisi
+- [ ] Web arayüzü geliştirme
+
+---
+
+## Referanslar
+
+1. Pan, X., Zhang, B., May, J., et al. (2017). Cross-lingual Name Tagging and Linking for 282 Languages. ACL.
+2. Şeker, G. A., & Eryiğit, G. (2012). Initial explorations on using CRFs for Turkish named entity recognition. COLING.
+3. Akın, A. A., & Akın, M. D. (2007). Zemberek, an open source NLP framework for Turkic Languages.
+4. Lafferty, J., McCallum, A., & Pereira, F. C. (2001). Conditional random fields. ICML.

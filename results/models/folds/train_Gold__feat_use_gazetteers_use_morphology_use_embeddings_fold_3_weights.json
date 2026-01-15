@@ -1,0 +1,1206 @@
+{
+    "top_features": [
+        {
+            "feature": [
+                "in_sirketler_tokens",
+                "B-COMPANY"
+            ],
+            "weight": 6.420199
+        },
+        {
+            "feature": [
+                "in_kisiler_tokens",
+                "B-PER"
+            ],
+            "weight": 4.94769
+        },
+        {
+            "feature": [
+                "in_kurumlar_tokens",
+                "B-ORG"
+            ],
+            "weight": 4.777479
+        },
+        {
+            "feature": [
+                "inside_bigram_kisiler",
+                "I-PER"
+            ],
+            "weight": 4.682184
+        },
+        {
+            "feature": [
+                "in_yerler_tokens",
+                "B-LOC"
+            ],
+            "weight": 4.449957
+        },
+        {
+            "feature": [
+                "BOS",
+                "O"
+            ],
+            "weight": 4.416566
+        },
+        {
+            "feature": [
+                "word.lower():ıstanbul",
+                "B-LOC"
+            ],
+            "weight": 4.079067
+        },
+        {
+            "feature": [
+                "lemma:ıstanbul",
+                "B-LOC"
+            ],
+            "weight": 4.079067
+        },
+        {
+            "feature": [
+                "in_topluluklar_tokens",
+                "B-GROUP"
+            ],
+            "weight": 3.911621
+        },
+        {
+            "feature": [
+                "start_trigram_film_muzik",
+                "B-MOVIE"
+            ],
+            "weight": 3.720213
+        },
+        {
+            "feature": [
+                "lemma:O",
+                "O"
+            ],
+            "weight": 3.719642
+        },
+        {
+            "feature": [
+                "morph.last_suffix_id:o/HARF",
+                "O"
+            ],
+            "weight": 3.719642
+        },
+        {
+            "feature": [
+                "in_sirketler_tokens",
+                "I-COMPANY"
+            ],
+            "weight": 3.692751
+        },
+        {
+            "feature": [
+                "word.lower():o",
+                "O"
+            ],
+            "weight": 3.593871
+        },
+        {
+            "feature": [
+                "word.lower():,",
+                "O"
+            ],
+            "weight": 3.591865
+        },
+        {
+            "feature": [
+                "lemma:,",
+                "O"
+            ],
+            "weight": 3.591865
+        },
+        {
+            "feature": [
+                "inside_bigram_yerler",
+                "I-LOC"
+            ],
+            "weight": 3.541882
+        },
+        {
+            "feature": [
+                "in_film_muzik_tokens",
+                "B-MOVIE"
+            ],
+            "weight": 3.469286
+        },
+        {
+            "feature": [
+                "start_bigram_kisiler",
+                "B-PER"
+            ],
+            "weight": 3.454747
+        },
+        {
+            "feature": [
+                "start_trigram_kisiler",
+                "B-PER"
+            ],
+            "weight": 3.435288
+        },
+        {
+            "feature": [
+                "inside_bigram_sirketler",
+                "I-COMPANY"
+            ],
+            "weight": 3.403116
+        },
+        {
+            "feature": [
+                "inside_bigram_topluluklar",
+                "I-GROUP"
+            ],
+            "weight": 3.37871
+        },
+        {
+            "feature": [
+                "word.lower():ızmir",
+                "B-LOC"
+            ],
+            "weight": 3.256667
+        },
+        {
+            "feature": [
+                "lemma:ızmir",
+                "B-LOC"
+            ],
+            "weight": 3.256667
+        },
+        {
+            "feature": [
+                "inside_bigram_film_muzik",
+                "I-MOVIE"
+            ],
+            "weight": 3.125456
+        },
+        {
+            "feature": [
+                "word.lower():uk",
+                "B-LOC"
+            ],
+            "weight": 3.091878
+        },
+        {
+            "feature": [
+                "lemma:uk",
+                "B-LOC"
+            ],
+            "weight": 3.091878
+        },
+        {
+            "feature": [
+                "word.lower():ito",
+                "B-ORG"
+            ],
+            "weight": 3.03704
+        },
+        {
+            "feature": [
+                "lemma:ito",
+                "B-ORG"
+            ],
+            "weight": 3.03704
+        },
+        {
+            "feature": [
+                "start_bigram_film_muzik",
+                "B-MOVIE"
+            ],
+            "weight": 3.008153
+        },
+        {
+            "feature": [
+                "start_bigram_sirketler",
+                "B-COMPANY"
+            ],
+            "weight": 2.996679
+        },
+        {
+            "feature": [
+                "start_trigram_yerler",
+                "B-LOC"
+            ],
+            "weight": 2.978638
+        },
+        {
+            "feature": [
+                "start_trigram_kurumlar",
+                "B-ORG"
+            ],
+            "weight": 2.9646
+        },
+        {
+            "feature": [
+                "word.lower():tramvay",
+                "I-COMPANY"
+            ],
+            "weight": 2.91287
+        },
+        {
+            "feature": [
+                "lemma:Tramvay",
+                "I-COMPANY"
+            ],
+            "weight": 2.91287
+        },
+        {
+            "feature": [
+                "start_trigram_sirketler",
+                "B-COMPANY"
+            ],
+            "weight": 2.867643
+        },
+        {
+            "feature": [
+                "start_trigram_topluluklar",
+                "B-GROUP"
+            ],
+            "weight": 2.85787
+        },
+        {
+            "feature": [
+                "word.lower():çakıcı",
+                "B-PER"
+            ],
+            "weight": 2.835956
+        },
+        {
+            "feature": [
+                "lemma:Çakıcı",
+                "B-PER"
+            ],
+            "weight": 2.835956
+        },
+        {
+            "feature": [
+                "word.lower():türkiye",
+                "B-LOC"
+            ],
+            "weight": 2.820834
+        },
+        {
+            "feature": [
+                "lemma:Türki",
+                "B-LOC"
+            ],
+            "weight": 2.820834
+        },
+        {
+            "feature": [
+                "inside_bigram_kurumlar",
+                "I-ORG"
+            ],
+            "weight": 2.771811
+        },
+        {
+            "feature": [
+                "word.lower():(",
+                "O"
+            ],
+            "weight": 2.617905
+        },
+        {
+            "feature": [
+                "lemma:(",
+                "O"
+            ],
+            "weight": 2.617905
+        },
+        {
+            "feature": [
+                "in_film_muzik_tokens",
+                "I-MOVIE"
+            ],
+            "weight": 2.579895
+        },
+        {
+            "feature": [
+                "in_yerler_tokens",
+                "I-LOC"
+            ],
+            "weight": 2.533759
+        },
+        {
+            "feature": [
+                "word.lower():msn",
+                "B-COMPANY"
+            ],
+            "weight": 2.501847
+        },
+        {
+            "feature": [
+                "morph.label_bağlaç",
+                "O"
+            ],
+            "weight": 2.475728
+        },
+        {
+            "feature": [
+                "in_kisiler_tokens",
+                "I-PER"
+            ],
+            "weight": 2.463852
+        },
+        {
+            "feature": [
+                "word.lower():bach",
+                "B-PER"
+            ],
+            "weight": 2.431546
+        },
+        {
+            "feature": [
+                "lemma:Bach",
+                "B-PER"
+            ],
+            "weight": 2.431546
+        },
+        {
+            "feature": [
+                "morph.label_isim",
+                "O"
+            ],
+            "weight": 2.424536
+        },
+        {
+            "feature": [
+                "lemma:grup",
+                "B-GROUP"
+            ],
+            "weight": 2.34704
+        },
+        {
+            "feature": [
+                "in_topluluklar_tokens",
+                "I-GROUP"
+            ],
+            "weight": 2.336171
+        },
+        {
+            "feature": [
+                "start_bigram_topluluklar",
+                "B-GROUP"
+            ],
+            "weight": 2.321511
+        },
+        {
+            "feature": [
+                "word.isdigit()",
+                "O"
+            ],
+            "weight": 2.270156
+        },
+        {
+            "feature": [
+                "in_kurumlar_tokens",
+                "I-ORG"
+            ],
+            "weight": 2.26287
+        },
+        {
+            "feature": [
+                "morph.label_sıfat",
+                "O"
+            ],
+            "weight": 2.186124
+        },
+        {
+            "feature": [
+                "word.isupper()",
+                "B-ORG"
+            ],
+            "weight": 2.174718
+        },
+        {
+            "feature": [
+                "word.lower():\"",
+                "O"
+            ],
+            "weight": 2.16258
+        },
+        {
+            "feature": [
+                "lemma:\"",
+                "O"
+            ],
+            "weight": 2.16258
+        },
+        {
+            "feature": [
+                "word.lower():.",
+                "O"
+            ],
+            "weight": 2.145577
+        },
+        {
+            "feature": [
+                "lemma:.",
+                "O"
+            ],
+            "weight": 2.145577
+        },
+        {
+            "feature": [
+                "word.lower():atv",
+                "B-COMPANY"
+            ],
+            "weight": 2.132295
+        },
+        {
+            "feature": [
+                "word.isdigit()",
+                "I-MOVIE"
+            ],
+            "weight": 2.076611
+        },
+        {
+            "feature": [
+                "word.has_apostrophe",
+                "B-PER"
+            ],
+            "weight": 2.066705
+        },
+        {
+            "feature": [
+                "word.lower():ile",
+                "O"
+            ],
+            "weight": 2.061284
+        },
+        {
+            "feature": [
+                "morph.label_fiil",
+                "O"
+            ],
+            "weight": 2.057183
+        },
+        {
+            "feature": [
+                "word.lower():ecevit",
+                "B-PER"
+            ],
+            "weight": 2.053484
+        },
+        {
+            "feature": [
+                "lemma:Ecevit",
+                "B-PER"
+            ],
+            "weight": 2.053484
+        },
+        {
+            "feature": [
+                "morph.label_özel",
+                "B-LOC"
+            ],
+            "weight": 2.050338
+        },
+        {
+            "feature": [
+                "lemma:Meclis",
+                "B-ORG"
+            ],
+            "weight": 2.048174
+        },
+        {
+            "feature": [
+                "word.lower():eşkiya",
+                "B-MOVIE"
+            ],
+            "weight": 2.044159
+        },
+        {
+            "feature": [
+                "lemma:Eşkiya",
+                "B-MOVIE"
+            ],
+            "weight": 2.044159
+        },
+        {
+            "feature": [
+                "+1:lemma:bu",
+                "I-LOC"
+            ],
+            "weight": 2.036353
+        },
+        {
+            "feature": [
+                "word.lower():bundesbank",
+                "B-ORG"
+            ],
+            "weight": 2.033081
+        },
+        {
+            "feature": [
+                "lemma:Bundesbank",
+                "B-ORG"
+            ],
+            "weight": 2.033081
+        },
+        {
+            "feature": [
+                "word.lower():sony",
+                "B-COMPANY"
+            ],
+            "weight": 2.008638
+        },
+        {
+            "feature": [
+                "lemma:Sony",
+                "B-COMPANY"
+            ],
+            "weight": 2.008638
+        },
+        {
+            "feature": [
+                "-1:lemma:İŞ",
+                "I-ORG"
+            ],
+            "weight": 2.00482
+        },
+        {
+            "feature": [
+                "+1:word.lower():de",
+                "I-PER"
+            ],
+            "weight": 1.978612
+        },
+        {
+            "feature": [
+                "word.lower():)",
+                "O"
+            ],
+            "weight": 1.96616
+        },
+        {
+            "feature": [
+                "lemma:)",
+                "O"
+            ],
+            "weight": 1.96616
+        },
+        {
+            "feature": [
+                "BOS",
+                "B-PER"
+            ],
+            "weight": 1.966158
+        },
+        {
+            "feature": [
+                "word.lower():meclis",
+                "B-ORG"
+            ],
+            "weight": 1.961187
+        },
+        {
+            "feature": [
+                "EOS",
+                "O"
+            ],
+            "weight": 1.933107
+        },
+        {
+            "feature": [
+                "word.lower():metropolitan",
+                "B-ORG"
+            ],
+            "weight": 1.925038
+        },
+        {
+            "feature": [
+                "lemma:Metropolitan",
+                "B-ORG"
+            ],
+            "weight": 1.925038
+        },
+        {
+            "feature": [
+                "+1:lemma:Başkanvekillerinden",
+                "B-ORG"
+            ],
+            "weight": 1.921502
+        },
+        {
+            "feature": [
+                "+1:word.lower():başkanvekillerinden",
+                "B-ORG"
+            ],
+            "weight": 1.910614
+        },
+        {
+            "feature": [
+                "-1:word.lower():tabiri",
+                "I-MOVIE"
+            ],
+            "weight": 1.907554
+        },
+        {
+            "feature": [
+                "-1:lemma:Tabiri",
+                "I-MOVIE"
+            ],
+            "weight": 1.907554
+        },
+        {
+            "feature": [
+                "morph.suffix_seq:KARAKTER_KESME-IC_HAL_BULUNMA_DA",
+                "B-LOC"
+            ],
+            "weight": 1.897258
+        },
+        {
+            "feature": [
+                "+1:word.lower():i̇şletmesi",
+                "I-COMPANY"
+            ],
+            "weight": 1.894787
+        },
+        {
+            "feature": [
+                "+1:lemma:İşletmesi",
+                "I-COMPANY"
+            ],
+            "weight": 1.894787
+        },
+        {
+            "feature": [
+                "word.lower():i̇stanbulspor",
+                "B-GROUP"
+            ],
+            "weight": 1.89338
+        },
+        {
+            "feature": [
+                "lemma:İstanbulspor",
+                "B-GROUP"
+            ],
+            "weight": 1.89338
+        },
+        {
+            "feature": [
+                "word.lower():rum",
+                "O"
+            ],
+            "weight": 1.874897
+        },
+        {
+            "feature": [
+                "lemma:Rum",
+                "O"
+            ],
+            "weight": 1.874897
+        },
+        {
+            "feature": [
+                "morph.last_suffix_id:Rum/OZEL",
+                "O"
+            ],
+            "weight": 1.874897
+        }
+    ],
+    "top_transitions": [
+        {
+            "from": "I-MOVIE",
+            "to": "I-MOVIE",
+            "weight": 5.183467
+        },
+        {
+            "from": "I-COMPANY",
+            "to": "I-COMPANY",
+            "weight": 5.167142
+        },
+        {
+            "from": "B-COMPANY",
+            "to": "I-COMPANY",
+            "weight": 5.157774
+        },
+        {
+            "from": "B-GROUP",
+            "to": "I-GROUP",
+            "weight": 4.901877
+        },
+        {
+            "from": "I-GROUP",
+            "to": "I-GROUP",
+            "weight": 4.531537
+        },
+        {
+            "from": "B-MOVIE",
+            "to": "I-MOVIE",
+            "weight": 4.250205
+        },
+        {
+            "from": "I-ORG",
+            "to": "I-ORG",
+            "weight": 4.086435
+        },
+        {
+            "from": "B-PER",
+            "to": "I-PER",
+            "weight": 3.947222
+        },
+        {
+            "from": "B-ORG",
+            "to": "I-ORG",
+            "weight": 3.638117
+        },
+        {
+            "from": "I-LOC",
+            "to": "I-LOC",
+            "weight": 3.627317
+        },
+        {
+            "from": "I-PER",
+            "to": "I-PER",
+            "weight": 2.957581
+        },
+        {
+            "from": "B-LOC",
+            "to": "I-LOC",
+            "weight": 2.810559
+        },
+        {
+            "from": "O",
+            "to": "O",
+            "weight": 2.484714
+        },
+        {
+            "from": "O",
+            "to": "B-PER",
+            "weight": 1.778489
+        },
+        {
+            "from": "O",
+            "to": "B-COMPANY",
+            "weight": 1.345774
+        },
+        {
+            "from": "O",
+            "to": "B-LOC",
+            "weight": 0.827615
+        },
+        {
+            "from": "I-PER",
+            "to": "O",
+            "weight": 0.750118
+        },
+        {
+            "from": "O",
+            "to": "B-GROUP",
+            "weight": 0.750073
+        },
+        {
+            "from": "O",
+            "to": "B-ORG",
+            "weight": 0.742519
+        },
+        {
+            "from": "I-GROUP",
+            "to": "B-MOVIE",
+            "weight": 0.654736
+        },
+        {
+            "from": "O",
+            "to": "B-MOVIE",
+            "weight": 0.539135
+        },
+        {
+            "from": "B-LOC",
+            "to": "B-COMPANY",
+            "weight": 0.492046
+        },
+        {
+            "from": "B-LOC",
+            "to": "B-MOVIE",
+            "weight": 0.388916
+        },
+        {
+            "from": "B-COMPANY",
+            "to": "O",
+            "weight": 0.23504
+        },
+        {
+            "from": "I-COMPANY",
+            "to": "B-PER",
+            "weight": 0.218813
+        },
+        {
+            "from": "B-LOC",
+            "to": "O",
+            "weight": 0.131221
+        },
+        {
+            "from": "I-LOC",
+            "to": "O",
+            "weight": 0.085999
+        },
+        {
+            "from": "B-PER",
+            "to": "B-LOC",
+            "weight": 0.037897
+        },
+        {
+            "from": "B-LOC",
+            "to": "B-ORG",
+            "weight": 0.029673
+        },
+        {
+            "from": "B-GROUP",
+            "to": "I-LOC",
+            "weight": 0.007096
+        },
+        {
+            "from": "I-LOC",
+            "to": "B-GROUP",
+            "weight": 0.001242
+        },
+        {
+            "from": "I-GROUP",
+            "to": "B-GROUP",
+            "weight": 1e-06
+        },
+        {
+            "from": "I-MOVIE",
+            "to": "I-COMPANY",
+            "weight": -3e-05
+        },
+        {
+            "from": "I-MOVIE",
+            "to": "B-ORG",
+            "weight": -0.012893
+        },
+        {
+            "from": "B-MOVIE",
+            "to": "B-GROUP",
+            "weight": -0.013991
+        },
+        {
+            "from": "B-GROUP",
+            "to": "O",
+            "weight": -0.029691
+        },
+        {
+            "from": "B-ORG",
+            "to": "O",
+            "weight": -0.032361
+        },
+        {
+            "from": "B-COMPANY",
+            "to": "B-GROUP",
+            "weight": -0.037172
+        },
+        {
+            "from": "B-COMPANY",
+            "to": "B-MOVIE",
+            "weight": -0.04473
+        },
+        {
+            "from": "B-MOVIE",
+            "to": "I-GROUP",
+            "weight": -0.045346
+        },
+        {
+            "from": "I-PER",
+            "to": "I-GROUP",
+            "weight": -0.094146
+        },
+        {
+            "from": "I-LOC",
+            "to": "I-GROUP",
+            "weight": -0.095073
+        },
+        {
+            "from": "I-COMPANY",
+            "to": "B-LOC",
+            "weight": -0.096053
+        },
+        {
+            "from": "I-ORG",
+            "to": "O",
+            "weight": -0.098128
+        },
+        {
+            "from": "B-COMPANY",
+            "to": "I-LOC",
+            "weight": -0.111856
+        },
+        {
+            "from": "I-MOVIE",
+            "to": "B-COMPANY",
+            "weight": -0.112375
+        },
+        {
+            "from": "B-LOC",
+            "to": "B-GROUP",
+            "weight": -0.126487
+        },
+        {
+            "from": "B-GROUP",
+            "to": "B-COMPANY",
+            "weight": -0.132192
+        },
+        {
+            "from": "I-COMPANY",
+            "to": "B-ORG",
+            "weight": -0.139607
+        },
+        {
+            "from": "I-COMPANY",
+            "to": "B-MOVIE",
+            "weight": -0.150264
+        },
+        {
+            "from": "B-GROUP",
+            "to": "B-PER",
+            "weight": -0.151911
+        },
+        {
+            "from": "I-PER",
+            "to": "B-GROUP",
+            "weight": -0.159567
+        },
+        {
+            "from": "B-PER",
+            "to": "I-COMPANY",
+            "weight": -0.168923
+        },
+        {
+            "from": "B-PER",
+            "to": "B-COMPANY",
+            "weight": -0.174581
+        },
+        {
+            "from": "I-ORG",
+            "to": "B-ORG",
+            "weight": -0.175472
+        },
+        {
+            "from": "B-PER",
+            "to": "B-MOVIE",
+            "weight": -0.199406
+        },
+        {
+            "from": "I-LOC",
+            "to": "I-COMPANY",
+            "weight": -0.200064
+        },
+        {
+            "from": "I-MOVIE",
+            "to": "O",
+            "weight": -0.206165
+        },
+        {
+            "from": "I-COMPANY",
+            "to": "B-COMPANY",
+            "weight": -0.209047
+        },
+        {
+            "from": "B-PER",
+            "to": "I-GROUP",
+            "weight": -0.225959
+        },
+        {
+            "from": "I-GROUP",
+            "to": "O",
+            "weight": -0.231295
+        },
+        {
+            "from": "B-PER",
+            "to": "B-GROUP",
+            "weight": -0.233847
+        },
+        {
+            "from": "B-ORG",
+            "to": "B-MOVIE",
+            "weight": -0.234534
+        },
+        {
+            "from": "B-GROUP",
+            "to": "B-ORG",
+            "weight": -0.234951
+        },
+        {
+            "from": "I-LOC",
+            "to": "B-MOVIE",
+            "weight": -0.247658
+        },
+        {
+            "from": "B-COMPANY",
+            "to": "I-PER",
+            "weight": -0.26079
+        },
+        {
+            "from": "I-GROUP",
+            "to": "B-COMPANY",
+            "weight": -0.272281
+        },
+        {
+            "from": "I-ORG",
+            "to": "B-MOVIE",
+            "weight": -0.277757
+        },
+        {
+            "from": "B-COMPANY",
+            "to": "B-PER",
+            "weight": -0.291735
+        },
+        {
+            "from": "B-COMPANY",
+            "to": "I-MOVIE",
+            "weight": -0.32589
+        },
+        {
+            "from": "I-GROUP",
+            "to": "B-ORG",
+            "weight": -0.348942
+        },
+        {
+            "from": "B-COMPANY",
+            "to": "B-ORG",
+            "weight": -0.366913
+        },
+        {
+            "from": "I-PER",
+            "to": "B-ORG",
+            "weight": -0.380909
+        },
+        {
+            "from": "I-LOC",
+            "to": "I-PER",
+            "weight": -0.394455
+        },
+        {
+            "from": "I-LOC",
+            "to": "B-PER",
+            "weight": -0.414912
+        },
+        {
+            "from": "I-MOVIE",
+            "to": "I-LOC",
+            "weight": -0.415785
+        },
+        {
+            "from": "I-ORG",
+            "to": "B-COMPANY",
+            "weight": -0.42708
+        },
+        {
+            "from": "I-LOC",
+            "to": "B-ORG",
+            "weight": -0.429316
+        },
+        {
+            "from": "B-ORG",
+            "to": "B-COMPANY",
+            "weight": -0.432153
+        },
+        {
+            "from": "B-MOVIE",
+            "to": "B-ORG",
+            "weight": -0.43615
+        },
+        {
+            "from": "B-PER",
+            "to": "O",
+            "weight": -0.436669
+        },
+        {
+            "from": "B-MOVIE",
+            "to": "I-LOC",
+            "weight": -0.450278
+        },
+        {
+            "from": "I-MOVIE",
+            "to": "I-PER",
+            "weight": -0.450527
+        },
+        {
+            "from": "I-LOC",
+            "to": "I-MOVIE",
+            "weight": -0.458822
+        },
+        {
+            "from": "B-MOVIE",
+            "to": "O",
+            "weight": -0.463056
+        },
+        {
+            "from": "B-GROUP",
+            "to": "I-PER",
+            "weight": -0.46462
+        },
+        {
+            "from": "I-COMPANY",
+            "to": "I-GROUP",
+            "weight": -0.471725
+        },
+        {
+            "from": "I-COMPANY",
+            "to": "I-MOVIE",
+            "weight": -0.491402
+        },
+        {
+            "from": "B-LOC",
+            "to": "B-LOC",
+            "weight": -0.49224
+        },
+        {
+            "from": "B-GROUP",
+            "to": "B-LOC",
+            "weight": -0.49242
+        },
+        {
+            "from": "I-GROUP",
+            "to": "I-LOC",
+            "weight": -0.505389
+        },
+        {
+            "from": "I-GROUP",
+            "to": "I-PER",
+            "weight": -0.506323
+        },
+        {
+            "from": "I-GROUP",
+            "to": "I-MOVIE",
+            "weight": -0.509234
+        },
+        {
+            "from": "I-COMPANY",
+            "to": "O",
+            "weight": -0.536162
+        },
+        {
+            "from": "B-ORG",
+            "to": "B-LOC",
+            "weight": -0.543735
+        },
+        {
+            "from": "I-ORG",
+            "to": "B-GROUP",
+            "weight": -0.559645
+        },
+        {
+            "from": "I-PER",
+            "to": "B-COMPANY",
+            "weight": -0.56743
+        },
+        {
+            "from": "I-PER",
+            "to": "I-COMPANY",
+            "weight": -0.583132
+        },
+        {
+            "from": "I-ORG",
+            "to": "B-PER",
+            "weight": -0.588408
+        },
+        {
+            "from": "I-LOC",
+            "to": "B-LOC",
+            "weight": -0.605054
+        }
+    ]
+}

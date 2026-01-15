@@ -1,0 +1,37 @@
+[
+    {
+        "text": "Barış Manço, 1999 yılında vefat etti.",
+        "expected_entities": [
+            "Barış Manço"
+        ]
+    },
+    {
+        "text": "Ankara Türkiye'nin başkentidir.",
+        "expected_entities": [
+            "Ankara",
+            "Türkiye"
+        ]
+    },
+    {
+        "text": "Fenerbahçe Şükrü Saracoğlu Stadyumu Kadıköy'dedir.",
+        "expected_entities": [
+            "Fenerbahçe",
+            "Şükrü Saracoğlu Stadyumu",
+            "Kadıköy"
+        ]
+    },
+    {
+        "text": "Gri madde beyin dokusunda bulunur.",
+        "expected_entities": [
+            "Gri madde"
+        ]
+    },
+    {
+        "text": "Recep Tayyip Erdoğan Türkiye Cumhuriyeti Cumhurbaşkanıdır.",
+        "expected_entities": [
+            "Recep Tayyip Erdoğan",
+            "Türkiye Cumhuriyeti",
+            "Cumhurbaşkanı"
+        ]
+    }
+]

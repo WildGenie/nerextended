@@ -1,0 +1,71 @@
+{
+    "project": "Extended Turkish NER",
+    "version": "1.1.0",
+    "supported_tags": [
+        {
+            "tag": "O",
+            "description": "Varlık dışı kelimeler (Outside - BIO şemasında varlık olmayan tokenlar).",
+            "examples": [
+                "ve",
+                "ile",
+                "bir"
+            ]
+        },
+        {
+            "tag": "PER",
+            "description": "Şahıs isimleri (Gerçek kişiler, sanatçılar, yazarlar).",
+            "examples": [
+                "Barış Manço",
+                "Elon Musk",
+                "Mustafa Kemal Atatürk"
+            ]
+        },
+        {
+            "tag": "LOC",
+            "description": "Konum, yer, şehir, ülke, mahalle isimleri.",
+            "examples": [
+                "Ankara",
+                "İstanbul Boğazı",
+                "Türkiye"
+            ]
+        },
+        {
+            "tag": "ORG",
+            "description": "Kamu kurumları, sivil toplum kuruluşları, vakıflar.",
+            "examples": [
+                "TED Koleji",
+                "Kızılay",
+                "TBMM"
+            ]
+        },
+        {
+            "tag": "COMPANY",
+            "description": "Ticari şirketler, bankalar, holdingler.",
+            "examples": [
+                "Koç Holding",
+                "Ziraat Bankası",
+                "Trendyol"
+            ]
+        },
+        {
+            "tag": "MOVIE",
+            "description": "Sanat eserleri (Film, şarkı, kitap, albüm isimleri).",
+            "examples": [
+                "Sarı Zeybek",
+                "Hababam Sınıfı",
+                "Dönence"
+            ]
+        },
+        {
+            "tag": "GROUP",
+            "description": "İnsan toplulukları (Müzik grupları, spor kulüpleri, dini/siyasi oluşumlar).",
+            "examples": [
+                "Beşiktaş JK",
+                "MFÖ",
+                "Muhafazakarlar"
+            ]
+        }
+    ],
+    "format": "BIO (Begin-Inside-Outside)",
+    "unified_json_directory": "data/json_export/"
+}
