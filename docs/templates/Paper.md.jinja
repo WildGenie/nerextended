@@ -1,16 +1,29 @@
 # Türkçe Metinler için Genişletilmiş Varlık İsim Tanıma: Derin Morfoloji ve Bağlamsal Gömülmeler ile CRF Yaklaşımı
 
+**Proje Raporu**
+**İleri Doğal Dil İşleme Dersi**
+**Güz Dönemi 2025**
+**Bursa Teknik Üniversitesi - Bilgisayar Mühendisliği Bölümü**
+
+**Öğrenci:** Bilgehan Zeki
+**Danışman:** Dr. Öğr. Üyesi Hayri Volkan Agun
+**Tarih:** 16 Ocak 2026
+
+---
+
 **Özet**
 
-Bu çalışmada, Türkçe metinler için genişletilmiş Varlık İsim Tanıma (Named Entity Recognition - NER) sistemi geliştirilmiştir. Geleneksel NER sistemlerinin tanıdığı üç temel kategoriye (Kişi, Konum, Kurum) ek olarak, üç yeni kategori (Şirket, Topluluk, Eser) eklenmiş ve toplamda altı varlık tipi hedeflenmiştir. Koşullu Rastgele Alanlar (Conditional Random Fields - CRF) algoritması üzerine kurulu olan sistem, derin morfolojik analiz (Nuve ve Zemberek) ve bağlamsal kelime gömülmeleri (BERT) ile zenginleştirilmiştir. Yapılan deneyler sonucunda, derin morfoloji ve BERT gömülmelerinin hibrit kullanımı ile **%{{ "%.2f"|format(best_f1 * 100) }}** F1-Score başarısı elde edilmiştir. Ayrıca, 10-katlı çapraz doğrulama ile modelin kararlılığı doğrulanmış ve gazetteer sözlüklerinin az temsil edilen sınıflar üzerindeki kritik etkisi kanıtlanmıştır.
+Bu çalışmada, Türkçe metinler için genişletilmiş **Varlık İsim Tanıma (Named Entity Recognition - NER)** sistemi geliştirilmiştir. Geleneksel NER sistemlerinin tanıdığı üç temel kategoriye (Kişi, Konum, Kurum) ek olarak, üç yeni kategori (**Şirket, Topluluk, Eser**) eklenmiş ve toplamda altı varlık tipi hedeflenmiştir. Koşullu Rastgele Alanlar (**Conditional Random Fields - CRF**) algoritması üzerine kurulu olan sistem, derin morfolojik analiz (**Nuve/Zemberek**) ve bağlamsal kelime gömülmeleri (**BERT**) ile zenginleştirilmiştir.
 
-**Anahtar Kelimeler:** Varlık İsim Tanıma, NER, CRF, Türkçe Doğal Dil İşleme, Morfolojik Analiz, BERT, Explainable AI
+Yapılan deneyler sonucunda, derin morfoloji ve BERT gömülmelerinin hibrit kullanımı ile **%{{ "%.2f"|format(best_f1 * 100) }}** F1-Score başarısı elde edilmiştir. Ayrıca, 10-katlı çapraz doğrulama ile modelin kararlılığı doğrulanmış ve gazetteer sözlüklerinin az temsil edilen sınıflar üzerindeki kritik etkisi kanıtlanmıştır.
+
+**Anahtar Kelimeler:** Varlık İsim Tanıma, NER, CRF, Türkçe Doğal Dil İşleme, Morfolojik Analiz, BERT, Gazetteer, Genişletilmiş NER
 
 ---
 
 ## 1. Giriş
 
-Varlık İsim Tanıma (NER), metinlerdeki özel isimlerin otomatik tespiti ve sınıflandırılması sürecidir. Türkçe gibi morfolojik açıdan zengin ve eklemeli dillerde, kelime köklerinin yanı sıra eklerin de ayrıştırılması, varlık sınırlarının belirlenmesinde kritik rol oynar [1]. Bu çalışmada, standart NER görevini genişleterek daha spesifik kategorilere odaklanılmış ve klasik makine öğrenmesi ile modern temsil yöntemlerinin hibrit bir mimarisi sunulmuştur.
+**İsimlendirilmiş Varlık Tanıma (NER)**, doğal dil işleme alanında metinlerden özel isimleri (named entities) otomatik olarak tespit etme ve sınıflandırma görevidir. Türkçe gibi sondan eklemeli ve morfolojik açıdan zengin bir dilde, kelime köklerinin ve eklerin doğru ayrıştırılması varlık sınırlarının belirlenmesinde temel bir zorluk teşkil etmektedir. Bu çalışmada, standart NER görevini genişleterek daha spesifik kategorilere (Şirket, Topluluk, Eser) odaklanılmış ve klasik makine öğrenmesi ile modern temsil yöntemlerinin hibrit bir mimarisi sunulmuştur.
 
 ### 1.1 Motivasyon ve Kapsam
 Genişletilmiş kategoriler (Şirket, Topluluk, Eser), bilgi çıkarma sistemlerinin işlevselliğini artırmaktadır. Örneğin, bir "Kurum" kategorisi altında kaybolan "Film/Müzik" eserlerinin ayrı bir etiketle tanınması, metin özetleme ve tavsiye sistemleri için değer yaratır.
