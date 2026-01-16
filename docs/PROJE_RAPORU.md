@@ -14,7 +14,7 @@ Bilgisayar Mühendisliği Bölümü
 
 ## Özet
 
-Bu çalışma, Türkçe metinlerde genişletilmiş İsimlendirilmiş Varlık Tanıma (Extended Named Entity Recognition – NER) problemini incelemektedir. Standart NER yaklaşımlarının kapsadığı üç temel varlık kategorisine (Kişi, Yer, Organizasyon) ek olarak Şirket, Müzik/Film Eseri ve Topluluk kategorileri dahil edilerek toplam altı varlık tipi hedeflenmiştir. Sistem, ders kapsamında işlenen yöntemlerle sınırlı tutulmuş olup, Zemberek morfolojik analiz aracı, gazetteer tabanlı sözlükler, düzenli ifadeler ve Koşullu Rastgele Alanlar (Conditional Random Fields – CRF) algoritması üzerine inşa edilmiştir. Saklı Markov Modelleri (Hidden Markov Models – HMM) ve Viterbi algoritması ise karşılaştırma amacıyla baseline model olarak kullanılmıştır. WikiANN-TR veri seti üzerinde gerçekleştirilen deneylerde CRF modeli ortalama %78.4 F1-skoru elde etmiştir. Gazeteci sözlüklerinin nadir sınıflar üzerindeki etkisi ve Zemberek’in Türkçe eklemeli yapıya sağladığı katkı, deneysel sonuçlarla ortaya konmuştur. Bu yaklaşım, dersin teorik altyapısını pratik bir uygulamada birleştirerek Türkçe doğal dil işleme alanında katkı sunmaktadır.
+Bu çalışma, Türkçe metinlerde genişletilmiş İsimlendirilmiş Varlık Tanıma (Extended Named Entity Recognition – NER) problemini incelemektedir. Standart NER yaklaşımlarının kapsadığı üç temel varlık kategorisine (Kişi, Yer, Organizasyon) ek olarak Şirket, Müzik/Film Eseri ve Topluluk kategorileri dahil edilerek toplam altı varlık tipi hedeflenmiştir. Sistem, ders kapsamında işlenen yöntemlerle sınırlı tutulmuş olup, Zemberek morfolojik analiz aracı, gazetteer tabanlı sözlükler, düzenli ifadeler ve Koşullu Rastgele Alanlar (Conditional Random Fields – CRF) algoritması üzerine inşa edilmiştir. Saklı Markov Modelleri (Hidden Markov Models – HMM) ve Viterbi algoritması ise karşılaştırma amacıyla baseline model olarak kullanılmıştır. WikiANN-TR veri seti üzerinde gerçekleştirilen deneylerde CRF modelinin performansı incelenmiştir (sonuçlar Kaynakça ve Bulgular bölümündedir). Gazeteci sözlüklerinin nadir sınıflar üzerindeki etkisi ve Zemberek’in Türkçe eklemeli yapıya sağladığı katkı, deneysel sonuçlarla ortaya konmuştur. Bu yaklaşım, dersin teorik altyapısını pratik bir uygulamada birleştirerek Türkçe doğal dil işleme alanında katkı sunmaktadır.
 
 **Anahtar Kelimeler:** İsimlendirilmiş Varlık Tanıma, Extended NER, Koşullu Rastgele Alanlar, Saklı Markov Modelleri, Viterbi Algoritması, Zemberek, Morfolojik Analiz, Gazetteer, Türkçe Doğal Dil İşleme
 
@@ -80,36 +80,20 @@ Varsayılan olasılıklar ve geçiş/emisyon tabloları kullanılarak en yüksek
 
 ## 4. Deneysel Sonuçlar
 
+*Bu bölümdeki deneysel sonuçlar, projenin `results/` dizininde yer alan güncel JSON çıktıları ve `Akademik_Makale.md` dosyasındaki otomatik üretilen tablolar referans alınarak doldurulacaktır.*
+
 ### 4.1 Çapraz Doğrulama
-| Fold | F1-Score |
-|------|----------|
-| 1    | 0.782   |
-| 2    | 0.776   |
-| 3    | 0.789   |
-| 4    | 0.781   |
-| 5    | 0.793   |
-| Ortalama | **0.784** |
+*(Güncel sonuçlar eklenecektir)*
 
 ### 4.2 Özellik Ablasyonu
-| Özellik Kümesi              | F1-Score |
-|-----------------------------|----------|
-| Sadece Morfoloji            | 0.712   |
-| Sadece Gazetteer            | 0.756   |
-| Morfoloji + Gazetteer       | **0.784** |
+*(Güncel sonuçlar eklenecektir)*
 
 ### 4.3 Sınıf Bazlı Performans
-| Sınıf   | Precision | Recall | F1-Score |
-|---------|-----------|--------|----------|
-| PER    | 0.86     | 0.82  | 0.84    |
-| LOC    | 0.83     | 0.79  | 0.81    |
-| ORG    | 0.79     | 0.75  | 0.77    |
-| COMPANY| 0.71     | 0.68  | 0.70    |
-| GROUP  | 0.62     | 0.59  | 0.60    |
-| MISC   | 0.68     | 0.64  | 0.66    |
+*(Güncel sonuçlar eklenecektir)*
 
 ## 5. Tartışma ve Sonuç
 
-Zemberek morfolojik analizi, Türkçe ekleri doğru ayrıştırarak CRF modelinin bağlamı daha iyi öğrenmesini sağlamıştır. Gazetteer entegrasyonu, MISC ve GROUP gibi nadir sınıflarda belirgin iyileşme (%8-10) yaratmıştır. Sistem, ders kapsamında işlenen yöntemlerle pratik ve gerçekçi bir baseline sunmaktadır. Gelecekte daha büyük gazetteer veritabanları ve veri artırımı ile performansın artırılması mümkündür.
+Zemberek morfolojik analizi, Türkçe ekleri doğru ayrıştırarak CRF modelinin bağlamı daha iyi öğrenmesini sağlamıştır. Gazetteer entegrasyonu, MISC ve GROUP gibi nadir sınıflarda belirgin iyileşme yaratmıştır. Sistem, ders kapsamında işlenen yöntemlerle pratik ve gerçekçi bir baseline sunmaktadır. Gelecekte daha büyük gazetteer veritabanları ve veri artırımı ile performansın artırılması mümkündür.
 
 ## Kaynakça
 1. Ders Notları ve Slaytlar. İleri Doğal Dil İşleme. Dr. Öğr. Üyesi Hayri Volkan Agun, Bursa Teknik Üniversitesi.
@@ -133,17 +117,4 @@ Cümle: "Barış Manço Sarı Zeybek’i Ankara’da söyledi."
 Etiket dizisi (tahmin): B-PER I-PER B-MISC I-MISC O B-LOC O O
 
 **Ek B: Detaylı Sınıflandırma Raporu**
-```
-              precision    recall  f1-score   support
-
-         PER       0.86      0.82      0.84       120
-         LOC       0.83      0.79      0.81       100
-         ORG       0.79      0.75      0.77        90
-     COMPANY       0.71      0.68      0.70        80
-       GROUP       0.62      0.59      0.60        70
-        MISC       0.68      0.64      0.66        85
-
-    accuracy                           0.75       545
-   macro avg       0.75      0.71      0.73       545
-weighted avg       0.76      0.75      0.75       545
-```
+*(Güncel rapor eklenecektir)*
