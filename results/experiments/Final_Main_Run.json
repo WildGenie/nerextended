@@ -1,0 +1,20 @@
+{
+    "experiment_id": "Final_Main_Run_MangaFixed",
+    "model_path": "/Users/wildgenie/Projects/nerextended/models/ner_crf_model.pkl",
+    "metrics": {
+        "f1_score": 0.8475,
+        "cross_validation": {
+            "average_f1": 0.8475,
+            "std_f1": 0.01
+        }
+    },
+    "config": {
+        "feature_config": {
+            "use_morphology": true,
+            "use_gazetteers": true,
+            "use_embeddings": false,
+            "embedding_model": "dbmdz/bert-base-turkish-cased"
+        },
+        "train_config": {}
+    }
+}

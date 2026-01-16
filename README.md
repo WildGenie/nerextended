@@ -8,6 +8,7 @@ Bu proje, Türkçe metinler için gelişmiş **Varlık İsim Tanıma (NER)** ger
 - **Derin Morfoloji:** Nuve motoru ile Türkçe'ye özgü ünlü düşmesi, ünsüz yumuşaması ve granüler ek etiketlerini (pos, case markers) öznitelik olarak kullanır.
 - **Hibrit Mimari:** BERT (BERTurk) vektörlerini klasik CRF öznitelikleriyle harmanlayarak hem yapısal hem semantik bilgi sağlar.
 - **Geniş Sözlük Desteği:** 160.000+ kayıtlık kapsamlı gazetteer (sözlük) tabanlı öznitelik sinyalleri.
+- **Canlı Demo:** [HuggingFace Spaces Üzerinde Dene](https://huggingface.co/spaces/WildGenie/turkish-extended-ner) 🚀
 
 ## � Performans Özet (SOTA)
 
@@ -31,7 +32,7 @@ Modelimiz, **Gold Test Seti** üzerinde aşağıdaki başarımı yakalamıştır
 
 ```bash
 # 1. Klonla ve dizine gir
-git clone https://github.com/kullanici/nerextended.git
+git clone https://github.com/WildGenie/nerextended.git
 cd nerextended
 
 # 2. Sanal ortamı kur

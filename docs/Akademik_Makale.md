@@ -115,9 +115,9 @@ CRF modeline eklenen her bir özellik grubunun marjinal katkısı ölçülmüşt
 
 | Özellik Kümesi | F1-Score |
 |----------------|----------|
-| Sadece Morfoloji (No Gazetteer) | 0.7406 |
 | Sadece Gazetteer (No Morphology) | 0.8432 |
-| Morfoloji + Gazetteer | 0.8514 |
+| Sadece Morfoloji (Zemberek) | 0.7406 |
+| Hibrit (Nuve + Zemberek) + Gazetteer | **0.8512** |
 | Hibrit (Morph + Gaz + BERT) | **0.8666** |
 
 ### 5.4 Kategori Bazlı Başarım Analizi

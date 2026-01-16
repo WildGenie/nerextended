@@ -1,0 +1,16 @@
+{
+    "experiment_id": "Final_Model_Gold",
+    "model_path": "/Users/wildgenie/Projects/nerextended/models/final_model.pkl",
+    "metrics": {
+        "f1_score": 0.8650,
+        "note": "Best performing CRF model on Gold dataset"
+    },
+    "config": {
+        "feature_config": {
+            "use_gazetteers": true,
+            "use_morphology": true,
+            "use_embeddings": true,
+            "embedding_model": "dbmdz/bert-base-turkish-cased"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+# Core Streamlit
+streamlit
+st-annotated-text
+
+# Data Processing
+pandas
+numpy
+
+# NLP & ML
+nltk
+joblib
+scikit-learn
+sklearn-crfsuite
+python-crfsuite
+
+# BERT Embeddings (features.py) - Optional, kept for feature extractor if needed later
+# torch
+# transformers
+
+# Dataset Loading (preprocessing.py)
+datasets

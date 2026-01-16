@@ -1,5 +1,0 @@
-wikipedia-api
-scikit-learn
-numpy
-nltk
-requests

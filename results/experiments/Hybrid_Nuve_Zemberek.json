@@ -1,0 +1,95 @@
+{
+    "experiment_id": "train_Gold__feat_use_gazetteers_use_morphology",
+    "timestamp": "2026-01-16T05:09:06.641545",
+    "model_path": "/Users/wildgenie/Projects/nerextended/results/models/train_Gold__feat_use_gazetteers_use_morphology.joblib",
+    "weight_path": "/Users/wildgenie/Projects/nerextended/results/models/train_Gold__feat_use_gazetteers_use_morphology_weights.json",
+    "config": {
+        "train_config": {
+            "include_gold_train": true,
+            "external_sources": []
+        },
+        "feature_config": {
+            "use_gazetteers": true,
+            "use_morphology": true
+        },
+        "cv": true,
+        "k": 5,
+        "engine": "hybrid"
+    },
+    "stats": {
+        "train": {
+            "total_sentences": 1500,
+            "total_tokens": 47360,
+            "tag_counts": {
+                "O": 39884,
+                "B-PER": 1483,
+                "I-PER": 1134,
+                "B-COMPANY": 369,
+                "I-COMPANY": 345,
+                "B-ORG": 886,
+                "B-LOC": 960,
+                "B-GROUP": 132,
+                "I-GROUP": 108,
+                "I-LOC": 312,
+                "I-ORG": 1001,
+                "B-MOVIE": 302,
+                "I-MOVIE": 444
+            }
+        },
+        "test": {
+            "total_sentences": 375,
+            "total_tokens": 11806,
+            "tag_counts": {
+                "O": 9929,
+                "B-PER": 380,
+                "I-PER": 296,
+                "B-LOC": 299,
+                "B-MOVIE": 71,
+                "I-MOVIE": 88,
+                "B-GROUP": 48,
+                "I-GROUP": 35,
+                "B-ORG": 182,
+                "I-LOC": 91,
+                "B-COMPANY": 104,
+                "I-COMPANY": 68,
+                "I-ORG": 215
+            }
+        }
+    },
+    "metrics": {
+        "f1_score": 0.8512464376912794,
+        "report": "              precision    recall  f1-score   support\n\n       B-PER       0.96      0.89      0.92       380\n       I-PER       0.96      0.86      0.91       296\n   B-COMPANY       0.92      0.85      0.88       104\n   I-COMPANY       0.87      0.81      0.84        68\n       B-ORG       0.88      0.84      0.86       182\n       B-LOC       0.90      0.86      0.88       299\n     B-GROUP       0.92      0.69      0.79        48\n     I-GROUP       0.90      0.80      0.85        35\n       I-LOC       0.75      0.43      0.55        91\n       I-ORG       0.82      0.78      0.80       215\n     B-MOVIE       0.83      0.80      0.81        71\n     I-MOVIE       0.74      0.73      0.74        88\n\n   micro avg       0.89      0.82      0.85      1877\n   macro avg       0.87      0.78      0.82      1877\nweighted avg       0.89      0.82      0.85      1877\n",
+        "cross_validation": {
+            "fold_scores": [
+                0.8474161747630217,
+                0.8565681003627557,
+                0.8777438942583836,
+                0.8566556247602808,
+                0.8324795329409644
+            ],
+            "fold_reports": [
+                "              precision    recall  f1-score   support\n\n       B-PER       0.95      0.91      0.93       278\n       I-PER       0.93      0.92      0.93       197\n   B-COMPANY       0.84      0.86      0.85        50\n   I-COMPANY       1.00      0.72      0.84        46\n       B-ORG       0.88      0.87      0.87       166\n       B-LOC       0.82      0.86      0.84       158\n     B-GROUP       0.94      0.77      0.85        22\n     I-GROUP       0.95      0.91      0.93        22\n       I-LOC       0.57      0.51      0.54        59\n       I-ORG       0.88      0.75      0.81       203\n     B-MOVIE       0.87      0.59      0.70        68\n     I-MOVIE       0.84      0.65      0.74        75\n\n   micro avg       0.88      0.82      0.85      1344\n   macro avg       0.87      0.78      0.82      1344\nweighted avg       0.89      0.82      0.85      1344\n",
+                "              precision    recall  f1-score   support\n\n       B-PER       0.97      0.93      0.95       276\n       I-PER       0.97      0.87      0.92       207\n   B-COMPANY       0.90      0.82      0.86        89\n   I-COMPANY       0.89      0.84      0.86        75\n       B-ORG       0.87      0.89      0.88       188\n       I-ORG       0.86      0.72      0.78       230\n       B-LOC       0.91      0.88      0.90       185\n     B-MOVIE       0.80      0.78      0.79        50\n     I-MOVIE       0.82      0.60      0.70       101\n     B-GROUP       0.96      0.72      0.82        32\n       I-LOC       0.65      0.56      0.60        54\n     I-GROUP       0.96      0.76      0.85        34\n\n   micro avg       0.90      0.82      0.86      1521\n   macro avg       0.88      0.78      0.83      1521\nweighted avg       0.90      0.82      0.86      1521\n",
+                "              precision    recall  f1-score   support\n\n       B-PER       0.95      0.93      0.94       329\n       I-PER       0.94      0.89      0.92       266\n   B-COMPANY       0.87      0.87      0.87        77\n   I-COMPANY       0.89      0.80      0.85        82\n       B-LOC       0.90      0.88      0.89       220\n     B-GROUP       0.79      0.76      0.78        25\n     I-GROUP       0.85      1.00      0.92        17\n       B-ORG       0.90      0.86      0.88       204\n       I-LOC       0.80      0.57      0.66        76\n       I-ORG       0.87      0.85      0.86       213\n     B-MOVIE       0.89      0.71      0.79        70\n     I-MOVIE       0.93      0.80      0.86       123\n\n   micro avg       0.91      0.85      0.88      1702\n   macro avg       0.88      0.83      0.85      1702\nweighted avg       0.91      0.85      0.88      1702\n",
+                "              precision    recall  f1-score   support\n\n       B-PER       0.96      0.89      0.92       304\n       I-PER       0.96      0.85      0.90       233\n   B-COMPANY       0.92      0.84      0.88        85\n   I-COMPANY       0.92      0.79      0.85        84\n       B-ORG       0.86      0.90      0.88       169\n       B-LOC       0.92      0.83      0.87       222\n     B-GROUP       0.89      0.57      0.70        28\n     I-GROUP       0.85      0.61      0.71        18\n       I-LOC       0.74      0.57      0.64        68\n       I-ORG       0.84      0.82      0.83       169\n     B-MOVIE       0.75      0.68      0.71        53\n     I-MOVIE       0.84      0.71      0.77        65\n\n   micro avg       0.90      0.82      0.86      1498\n   macro avg       0.87      0.75      0.81      1498\nweighted avg       0.90      0.82      0.86      1498\n",
+                "              precision    recall  f1-score   support\n\n       B-ORG       0.91      0.90      0.91       159\n       B-LOC       0.89      0.82      0.85       175\n     B-GROUP       0.72      0.52      0.60        25\n     I-GROUP       0.75      0.71      0.73        17\n       I-LOC       0.75      0.44      0.55        55\n       I-ORG       0.76      0.81      0.79       186\n       B-PER       0.93      0.85      0.89       296\n       I-PER       0.93      0.87      0.90       231\n   B-COMPANY       0.87      0.79      0.83        68\n   I-COMPANY       0.94      0.83      0.88        58\n     B-MOVIE       0.76      0.64      0.70        61\n     I-MOVIE       0.68      0.74      0.71        80\n\n   micro avg       0.86      0.81      0.83      1411\n   macro avg       0.82      0.74      0.78      1411\nweighted avg       0.86      0.81      0.83      1411\n"
+            ],
+            "fold_model_paths": [
+                "results/models/folds/train_Gold__feat_use_gazetteers_use_morphology_fold_1.joblib",
+                "results/models/folds/train_Gold__feat_use_gazetteers_use_morphology_fold_2.joblib",
+                "results/models/folds/train_Gold__feat_use_gazetteers_use_morphology_fold_3.joblib",
+                "results/models/folds/train_Gold__feat_use_gazetteers_use_morphology_fold_4.joblib",
+                "results/models/folds/train_Gold__feat_use_gazetteers_use_morphology_fold_5.joblib"
+            ],
+            "fold_weight_paths": [
+                "results/models/folds/train_Gold__feat_use_gazetteers_use_morphology_fold_1_weights.json",
+                "results/models/folds/train_Gold__feat_use_gazetteers_use_morphology_fold_2_weights.json",
+                "results/models/folds/train_Gold__feat_use_gazetteers_use_morphology_fold_3_weights.json",
+                "results/models/folds/train_Gold__feat_use_gazetteers_use_morphology_fold_4_weights.json",
+                "results/models/folds/train_Gold__feat_use_gazetteers_use_morphology_fold_5_weights.json"
+            ],
+            "average_f1": 0.8541726654170813,
+            "std_f1": 0.014722419552184573
+        }
+    }
+}

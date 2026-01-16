@@ -1,0 +1,20 @@
+{
+    "experiment_id": "train_Gold_Synthetic_feat_use_gazetteers_use_morphology",
+    "timestamp": "2026-01-15T20:30:00.081731",
+    "config": {
+        "train_config": {
+            "include_gold_train": true,
+            "external_sources": [
+                "Synthetic"
+            ]
+        },
+        "feature_config": {
+            "use_gazetteers": true,
+            "use_morphology": true
+        }
+    },
+    "metrics": {
+        "f1_score": 0.8474964131954762,
+        "report": "              precision    recall  f1-score   support\n\n       B-PER       0.95      0.90      0.92       380\n       I-PER       0.95      0.88      0.91       296\n   B-COMPANY       0.96      0.86      0.90       104\n   I-COMPANY       0.82      0.85      0.83        68\n       B-ORG       0.87      0.83      0.85       182\n       B-LOC       0.89      0.83      0.86       299\n     B-GROUP       0.79      0.62      0.70        48\n     I-GROUP       0.67      0.80      0.73        35\n       I-LOC       0.73      0.42      0.53        91\n       I-ORG       0.77      0.79      0.78       215\n     B-MOVIE       0.83      0.82      0.82        71\n     I-MOVIE       0.92      0.78      0.85        88\n\n   micro avg       0.88      0.82      0.85      1877\n   macro avg       0.84      0.78      0.81      1877\nweighted avg       0.88      0.82      0.85      1877\n"
+    }
+}

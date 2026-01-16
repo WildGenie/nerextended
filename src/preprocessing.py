@@ -39,6 +39,20 @@ class Preprocessor:
             logging.info("Initializing Nuve Bridge...")
             self.nuve = NuveBridge()
             logging.info("Nuve Bridge initialized.")
+        elif self.engine == "hybrid":
+            # Initialize BOTH
+            if ZEMBEREK_AVAILABLE:
+                logging.info("Initializing Zemberek (Hybrid)...")
+                try:
+                    self.morphology = TurkishMorphology.create_with_defaults()
+                except Exception as e:
+                    logging.warning(f"Zemberek init failed: {e}")
+            else:
+                logging.warning("Zemberek not available for hybrid mode.")
+
+            from src.nuve_bridge import NuveBridge
+            logging.info("Initializing Nuve Bridge (Hybrid)...")
+            self.nuve = NuveBridge()
 
     def load_wikiann(self, split="train", limit=None):
         """
@@ -159,6 +173,36 @@ class Preprocessor:
                     'lemma': res['lemma'],
                     'pos': "UNK",
                     'morph': res.get('morphemes', [])
+                })
+            return processed
+
+        if self.engine == "hybrid":
+            # 1. Get Nuve Results (Batch)
+            nuve_results = {}
+            if self.nuve:
+                nuve_results = self.nuve.analyze_batch(tokens)
+
+            processed = []
+            for token in tokens:
+                # 2. Get Zemberek Results (Word-by-word)
+                z_lemma, z_pos, z_morph = self.analyze_word(token) # analyze_word uses self.morphology if set
+
+                # 3. Get Nuve Result
+                n_res = nuve_results.get(token, {'lemma': token, 'morphemes': []})
+
+                processed.append({
+                    'word': token,
+                    'lemma': n_res['lemma'], # Default to Nuve lemma as primary
+                    'pos': z_pos,            # Default to Zemberek POS as primary
+                    'morph': n_res.get('morphemes', []), # Default morph
+
+                    # Store Both explicitly
+                    'nuve_lemma': n_res['lemma'],
+                    'nuve_morph': n_res.get('morphemes', []),
+
+                    'zemberek_lemma': z_lemma,
+                    'zemberek_pos': z_pos,
+                    'zemberek_morph': z_morph
                 })
             return processed
 

@@ -1,7 +1,5 @@
 import os
 import re
-import torch
-from transformers import AutoTokenizer, AutoModel
 import numpy as np
 
 class BERTFeatureExtractor:
@@ -16,6 +14,10 @@ class BERTFeatureExtractor:
     def __init__(self, model_name="dbmdz/bert-base-turkish-cased"):
         if self.initialized:
             return
+
+        import torch
+        from transformers import AutoTokenizer, AutoModel
+
         self.device = "mps" if torch.backends.mps.is_available() else "cpu"
         self.tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
         # Use AutoModel to handle BERT, BART (VBART), and GPT (Kumru) architectures
@@ -32,6 +34,7 @@ class BERTFeatureExtractor:
         if sent_str in self.cache:
             return self.cache[sent_str]
 
+        import torch
         inputs = self.tokenizer(tokens, is_split_into_words=True, return_tensors="pt", padding=True, truncation=True).to(self.device)
 
         # Filter inputs to only include what the model accepts
@@ -151,22 +154,41 @@ class FeatureExtractor:
             features['lemma'] = lemma
             features['pos'] = pos
 
-            # Deep Morphology (Nuve)
-            morph = sent[i].get('morph', [])
+            # Deep Morphology (Nuve) - Standard or Hybrid
+            if 'nuve_morph' in sent[i]:
+                 morph = sent[i]['nuve_morph']
+                 prefix = "nuve."
+            else:
+                 morph = sent[i].get('morph', [])
+                 prefix = "morph." # Backward compatibility
+
             if isinstance(morph, list) and len(morph) > 0:
-                features['morph.count'] = len(morph)
-                features['morph.last_suffix_id'] = morph[-1].get('Id', '')
-                features['morph.has_change'] = any(m.get('HasChange', False) for m in morph)
+                features[f'{prefix}count'] = len(morph)
+                features[f'{prefix}last_suffix_id'] = morph[-1].get('Id', '')
+                features[f'{prefix}has_change'] = any(m.get('HasChange', False) for m in morph)
 
                 # Suffix sequence feature
                 suffix_seq = "-".join([m.get('Id', '') for m in morph if m.get('Type') != 'Root'])
                 if suffix_seq:
-                    features['morph.suffix_seq'] = suffix_seq
+                    features[f'{prefix}suffix_seq'] = suffix_seq
 
                 # Combine all labels
                 for m in morph:
                     for label in m.get('Labels', []):
-                        features[f'morph.label_{label}'] = True
+                        features[f'{prefix}label_{label}'] = True
+
+            # Zemberek Morphology (Hybrid Only)
+            if 'zemberek_morph' in sent[i]:
+                z_morph = sent[i]['zemberek_morph']
+                prefix = "zember."
+
+                if isinstance(z_morph, list) and len(z_morph) > 0:
+                     features[f'{prefix}count'] = len(z_morph)
+                     features[f'{prefix}last_suffix_id'] = z_morph[-1].get('Id', '')
+
+                     suffix_seq = "-".join([m.get('Id', '') for m in z_morph if m.get('Type') != 'Root'])
+                     if suffix_seq:
+                        features[f'{prefix}suffix_seq'] = suffix_seq
 
         # Gazetteer Features (Optional - controlled by self.use_gazetteers)
         if self.use_gazetteers:

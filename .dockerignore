@@ -1,0 +1,15 @@
+venv/
+.git/
+.gitignore
+__pycache__/
+.pytest_cache/
+*.log
+*.pkl
+results.json
+nuve_wrapper/bin/
+nuve_wrapper/obj/
+build.log
+build_v2.log
+Dockerfile
+HF_README.md
+upload_to_hf.py

@@ -1,0 +1,13 @@
+{
+    "experiment_id": "benchmark_savasy_bert-base-turkish-ner-cased",
+    "config": {
+        "model": "savasy/bert-base-turkish-ner-cased",
+        "dataset": "Gold (Full)"
+    },
+    "metrics": {
+        "f1": 0.9016462039678921,
+        "precision": 0.9013022073684389,
+        "recall": 0.9105905418652604
+    },
+    "classification_report": "See logs or metrics"
+}

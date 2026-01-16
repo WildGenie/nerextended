@@ -1,0 +1,17 @@
+{
+    "experiment_id": "train_WikiANN_feat_use_gazetteers_use_morphology",
+    "timestamp": "2026-01-15T19:07:27.429068",
+    "config": {
+        "train_sources": [
+            "WikiANN"
+        ],
+        "feature_config": {
+            "use_gazetteers": true,
+            "use_morphology": true
+        }
+    },
+    "metrics": {
+        "f1_score": 0.4783775647847839,
+        "report": "              precision    recall  f1-score   support\n\n       B-ORG       0.34      0.50      0.40      1068\n       I-ORG       0.21      0.84      0.34      1216\n       B-PER       0.68      0.59      0.63      1863\n       I-PER       0.51      0.79      0.62      1430\n       B-LOC       0.36      0.42      0.39      1259\n       I-LOC       0.20      0.14      0.17       403\n\n   micro avg       0.37      0.60      0.46      7239\n   macro avg       0.38      0.55      0.42      7239\nweighted avg       0.43      0.60      0.48      7239\n"
+    }
+}

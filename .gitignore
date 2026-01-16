@@ -2,11 +2,71 @@ venv/
 __pycache__/
 *.pyc
 .env
-results/experiments/
-results/benchmarks/
-results/optimization/
+results/runs/
 *.log
 logs/
 *.zip
 .DS_Store
 .pytest_cache/
+
+# .NET temporary files
+[Bb]in/
+[Oo]bj/
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+# Rider
+.idea/
+*.sln.iml
+
+# --- Visual Studio & .NET Extended ---
+.vs/
+*.suo
+*.jfm
+*.ice
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.user
+_ReSharper*/
+*.resharper
+*.dotSettings.user
+.vscode/
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+*.stub
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# BenchmarkDotNet
+BenchmarkDotNet.Artifacts/
+
+# Test results
+TestResults/
+*.trxe
+*.testsettings
+*.runsettings
+

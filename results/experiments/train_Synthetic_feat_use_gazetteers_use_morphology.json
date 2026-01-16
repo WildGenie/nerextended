@@ -1,0 +1,17 @@
+{
+    "experiment_id": "train_Synthetic_feat_use_gazetteers_use_morphology",
+    "timestamp": "2026-01-15T19:09:10.284097",
+    "config": {
+        "train_sources": [
+            "Synthetic"
+        ],
+        "feature_config": {
+            "use_gazetteers": true,
+            "use_morphology": true
+        }
+    },
+    "metrics": {
+        "f1_score": 0.25630224013026415,
+        "report": "              precision    recall  f1-score   support\n\n     B-GROUP       0.04      0.27      0.08       180\n   B-COMPANY       0.37      0.10      0.16       473\n   I-COMPANY       0.32      0.16      0.21       413\n       B-LOC       0.80      0.09      0.16      1259\n     B-MOVIE       0.02      0.09      0.03       373\n     I-MOVIE       0.05      0.44      0.09       532\n       B-PER       0.57      0.30      0.39      1863\n       B-ORG       0.51      0.11      0.18      1068\n       I-ORG       0.65      0.16      0.26      1216\n       I-PER       0.60      0.42      0.49      1430\n     I-GROUP       0.01      0.35      0.03       143\n       I-LOC       1.00      0.01      0.01       403\n\n   micro avg       0.15      0.22      0.18      9353\n   macro avg       0.41      0.21      0.18      9353\nweighted avg       0.54      0.22      0.26      9353\n"
+    }
+}

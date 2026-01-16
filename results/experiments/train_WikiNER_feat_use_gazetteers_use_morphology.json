@@ -1,0 +1,17 @@
+{
+    "experiment_id": "train_WikiNER_feat_use_gazetteers_use_morphology",
+    "timestamp": "2026-01-15T19:08:28.039015",
+    "config": {
+        "train_sources": [
+            "WikiNER"
+        ],
+        "feature_config": {
+            "use_gazetteers": true,
+            "use_morphology": true
+        }
+    },
+    "metrics": {
+        "f1_score": 0.36567474254883786,
+        "report": "              precision    recall  f1-score   support\n\n       B-PER       0.84      0.37      0.52      1863\n       B-LOC       0.32      0.68      0.44      1259\n     B-GROUP       0.04      0.11      0.06       180\n     I-GROUP       0.02      0.11      0.04       143\n       I-LOC       0.10      0.72      0.18       403\n       I-PER       0.59      0.38      0.46      1430\n       B-ORG       0.48      0.20      0.28      1068\n       I-ORG       0.38      0.28      0.32      1216\n     B-MOVIE       0.36      0.16      0.22       373\n     I-MOVIE       0.41      0.24      0.30       532\n   I-COMPANY       0.42      0.08      0.14       413\n\n   micro avg       0.31      0.36      0.33      8880\n   macro avg       0.36      0.30      0.27      8880\nweighted avg       0.49      0.36      0.37      8880\n"
+    }
+}

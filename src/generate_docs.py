@@ -137,15 +137,34 @@ def generate_feature_ablation_table(results):
         use_morph = f_config.get('use_morphology', False)
         use_emb = f_config.get('use_embeddings', False)
 
+        # Helper to safely get nested keys
+        def safe_get(d, keys, default=None):
+            for k in keys:
+                 if k in d: d = d[k]
+                 else: return default
+            return d
+
+        engine = safe_get(r, ['config', 'config', 'engine']) or safe_get(r, ['config', 'train_config', 'engine']) or safe_get(r, ['config', 'engine'], "zemberek")
+
         label = "Unknown"
         if not use_gaz and not use_morph and not use_emb:
             label = "Baseline (Minimal)"
         elif use_morph and not use_gaz and not use_emb:
-            label = "Sadece Morfoloji (No Gazetteer)"
+            if engine == 'hybrid':
+                label = "Hibrit Morfoloji (Nuve + Zemberek)"
+            elif engine == 'nuve':
+                label = "Nuve (Derin Morfoloji)"
+            else:
+                label = "Sadece Morfoloji (Zemberek)"
         elif use_gaz and not use_morph and not use_emb:
             label = "Sadece Gazetteer (No Morphology)"
         elif use_gaz and use_morph and not use_emb:
-            label = "Morfoloji + Gazetteer"
+            if engine == 'hybrid':
+                label = "Hibrit (Nuve + Zemberek) + Gazetteer"
+            elif engine == 'nuve':
+                label = "Morfoloji (Nuve) + Gazetteer"
+            else:
+                label = "Morfoloji (Zemberek) + Gazetteer"
         elif use_gaz and use_morph and use_emb:
             label = "Hibrit (Morph + Gaz + BERT)"
 
@@ -157,7 +176,16 @@ def generate_feature_ablation_table(results):
     # Create Table
     table_rows = []
     # Force order
-    order = ["Baseline (Minimal)", "Sadece Morfoloji (No Gazetteer)", "Sadece Gazetteer (No Morphology)", "Morfoloji + Gazetteer", "Hibrit (Morph + Gaz + BERT)"]
+    order = [
+        "Baseline (Minimal)",
+        "Sadece Gazetteer (No Morphology)",
+        "Sadece Morfoloji (Zemberek)",
+        "Nuve (Derin Morfoloji)",
+        "Morfoloji (Zemberek) + Gazetteer",
+        "Morfoloji (Nuve) + Gazetteer",
+        "Hibrit (Nuve + Zemberek) + Gazetteer",
+        "Hibrit (Morph + Gaz + BERT)"
+    ]
 
     for label in order:
         if label in scores:

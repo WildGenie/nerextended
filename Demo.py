@@ -13,41 +13,54 @@ st.set_page_config(page_title="Türkçe NER Demo", layout="wide")
 # --- CUSTOM CSS ---
 st.markdown("""
 <style>
+    /* Dark mode adaptive classes */
+    :root {
+        --token-bg: var(--secondary-background-color, #f0f2f6);
+        --token-text: var(--text-color, #31333F);
+    }
+
     .stApp {
-        background-color: #f8f9fa;
+        /* Remove hardcoded white background */
     }
     .main-header {
         text-align: center;
-        padding: 20px;
-        background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+        padding: 30px;
+        background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
         color: white;
-        border-radius: 10px;
+        border-radius: 15px;
         margin-bottom: 30px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
     .result-token {
         display: inline-block;
         margin: 3px;
-        padding: 5px 8px;
-        border-radius: 4px;
-        font-family: 'Inter', sans-serif;
-        font-size: 1.1em;
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-family: 'Source Code Pro', monospace;
+        font-size: 1.05em;
         line-height: 1.6;
-        color: #333;
-        background-color: white;
-        border: 1px solid #e0e0e0;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        color: var(--token-text);
+        background-color: var(--token-bg);
+        border: 1px solid rgba(128, 128, 128, 0.2);
+        transition: all 0.2s ease;
+    }
+    .result-token:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     .result-token.entity {
-         color: #000;
-         font-weight: 500;
+         color: #000; /* Entities keep high contrast black text for visibility on colors */
+         font-weight: 600;
          border: none;
     }
     .entity-label {
-        font-size: 0.75em;
-        font-weight: 700;
+        font-size: 0.7em;
+        font-weight: 800;
         text-transform: uppercase;
-        margin-left: 6px;
-        opacity: 0.6;
+        margin-left: 8px;
+        padding: 2px 4px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
         vertical-align: middle;
     }
 </style>
@@ -198,6 +211,7 @@ def load_internal_model(m_id):
         use_embeddings=config.get("use_embeddings", False),
         embedding_model="dbmdz/bert-base-turkish-cased"
     )
+    # Use Nuve as requested (requires .NET SDK in Docker)
     preprocessor = Preprocessor(engine="nuve")
     model = CRFModel.load(m_info["path"])
     return (extractor, preprocessor, model), None
