@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 .env
 results/runs/
+results/cache/
 *.log
 logs/
 *.zip
@@ -69,4 +70,3 @@ TestResults/
 *.trxe
 *.testsettings
 *.runsettings
-
