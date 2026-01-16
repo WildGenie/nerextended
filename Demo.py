@@ -369,7 +369,7 @@ if st.button("Analiz Et 🚀", type="primary"):
 
                             visualize_result(tokens, r_tags)
                         except Exception as ex:
-                            st.warning(f"Bağlantı Hatası ({r_name})")
+                            st.warning(f"Bağlantı Hatası ({r_name}): {str(ex)}")
 
         except Exception as general_ex:
             st.error(f"Sistem Hatası: {str(general_ex)}")
